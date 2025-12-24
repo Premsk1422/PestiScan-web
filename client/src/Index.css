@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PestiScan Theme */
+:root {
+  --ps-green: #26c766;
+
+  /* softer / lower opacity versions */
+  --ps-green-soft: rgba(38, 199, 102, 0.10);
+  --ps-green-soft-2: rgba(38, 199, 102, 0.18);
+  --ps-green-border: rgba(38, 199, 102, 0.32);
+
+  --ps-text: #0f1a14;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--ps-green-soft);
+  color: var(--ps-text);
+}
+
+/* Shared centered layout like Scan/History */
+.ps-page {
+  max-width: 72rem; /* slightly wide but readable */
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .ps-page {
+    padding: 1.75rem;
+  }
+}
+
+.ps-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--ps-green-border);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Inputs and buttons */
+.ps-input {
+  width: 100%;
+  border: 1px solid var(--ps-green-border);
+  background: white;
+  border-radius: 0.9rem;
+  padding: 0.6rem 0.85rem;
+  outline: none;
+}
+
+.ps-input:focus {
+  box-shadow: 0 0 0 3px rgba(38, 199, 102, 0.18);
+}
+
+.ps-btn {
+  border-radius: 0.9rem;
+  padding: 0.6rem 0.95rem;
+  font-weight: 700;
+}
+
+.ps-btn-primary {
+  background: var(--ps-green-soft-2);
+  border: 1px solid var(--ps-green-border);
+}
+
+.ps-btn-primary:hover {
+  filter: brightness(0.98);
+}
+
+.ps-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--ps-green-border);
+  background: var(--ps-green-soft);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+/* Numbering fix: "2. content" never splits */
+.ps-step {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.ps-step-num {
+  font-weight: 800;
+  min-width: 2.2ch;
+}
+
+.ps-muted {
+  opacity: 0.72;
+}
+@keyframes psFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 20px) scale(1.05); }
+}
+@keyframes psFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 30px) scale(1.06); }
+}
+@keyframes psFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -35px) scale(1.04); }
+}
