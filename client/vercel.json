@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "https://pestiscan-api.onrender.com/api/$1" }
+  ]
+}
